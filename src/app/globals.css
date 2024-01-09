@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  width: 100%;
+  max-width: 1080px;
+  background-color: #a8e6cf;
+}
+
+.scale-animation {
+  @apply hover:scale-110 transition-all duration-300;
+}
