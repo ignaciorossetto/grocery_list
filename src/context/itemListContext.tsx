@@ -8,8 +8,7 @@ import { Item } from "../../types/types"
 export const ItemListContext = createContext<any>({})
 
 const ItemListProvider = ({children}: {children: React.ReactNode}) => {
-    const itemListFromStorage:Item[] | false = localStorage.getItem("itemsList") ? JSON.parse(localStorage.getItem('itemsList')!) : false
-    console.log(itemListFromStorage)
+    const itemListFromStorage:Item[] | false = typeof window !== 'undefined' && localStorage.getItem("itemsList") ? JSON.parse(localStorage.getItem('itemsList')!) : false
     const [itemsList, setItemsList] = useState<Item[]>(itemListFromStorage || [])
 
     useEffect(()=> {
